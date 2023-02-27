@@ -26,3 +26,12 @@ class Cheat_Loaded_Dice(Player):
             if self.dice[i] < 6:
                 self.dice[i] +=1
             i +=1
+class Cheat_Mulligan(Player):
+    def cheat(self):
+        diceSum = 0
+
+        for x in self.dice:
+            diceSum = x + diceSum
+
+        if diceSum < 9:
+            self.roll()
